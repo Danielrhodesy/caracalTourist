@@ -1,0 +1,14 @@
+export const spaceXxxxSmall = '5px';
+export const spaceXxxSmall = '10px';
+export const spaceXxSmall = '15px';
+export const spaceXSmall = '20px';
+export const spaceSmall = '25px';
+export const spaceMedium = '30px';
+export const spaceLarge = '40px';
+export const spaceXLarge = '50px';
+export const spaceXxLarge = '60px';
+export const spaceXxxLarge = '80px';
+export const spaceXxxxLarge = '100px';
+export const spaceVxxLarge = '160px';
+export const spaceVxxxLarge = '180px';
+export const spaceMLarge = '220px';
