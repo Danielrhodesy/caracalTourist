@@ -20,3 +20,9 @@ p {
   color: white;
   font-weight: 600;
 }
+
+h4, h3, h2, h1 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
