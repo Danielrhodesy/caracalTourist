@@ -3,11 +3,13 @@ import TestLogo from '../images/logo.svg'
 
 const Container = styled.section`
   height: 400px;
-  width: 90%;
+  width: auto;
+  max-width: 100em;
+  margin-inline: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 5% 0 5%;
+  // padding: 0 5% 0 5%;
   background-color: #1D2B54;
 `;
 
