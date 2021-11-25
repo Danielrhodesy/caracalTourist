@@ -1,4 +1,16 @@
 import styled from 'styled-components';
+import Stack from '../components/Stack'
+
+
+const ContentWrapper = styled.div`
+    height: 90%;
+    max-width: 95em;
+    display: flex;
+    margin-inline: auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+`;
 
 const RowHeader = styled.h4``;
 
@@ -17,9 +29,10 @@ const RightRowTitles = styled.div`
 
 const Row = styled.div`
   height: 280px;  
-  width: 80%;
+  max-width: 93em;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 //   background-color: red;
 `;
 
@@ -31,14 +44,16 @@ const ItemCard = styled.div`
 
 const RarityBlock = ({titleTest}) => {
     return (
-        <>
+        <ContentWrapper>
             <h1>{titleTest}</h1>
             <RowHeader>Common</RowHeader>
             <Row>
-                <ItemCard></ItemCard>
-                <ItemCard></ItemCard>
-                <ItemCard></ItemCard>
-                <ItemCard></ItemCard>
+   
+                    <ItemCard></ItemCard>
+                    <ItemCard></ItemCard>
+                    <ItemCard></ItemCard>
+                    <ItemCard></ItemCard>
+         
             </Row>
             <RowHeader>Uncommon</RowHeader>
             <Row>
@@ -60,7 +75,7 @@ const RarityBlock = ({titleTest}) => {
                 <ItemCard></ItemCard>
                 <ItemCard></ItemCard>
             </Row>
-        </>
+        </ContentWrapper>
     )
 };
 

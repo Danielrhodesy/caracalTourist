@@ -6,12 +6,12 @@ import RarityBlock from './RarityBlock'
 
 const Container = styled.section`
 height: 1300px;
-width: 90%;
+// width: 90em;
 display: flex;
+margin-inline: auto;
 justify-content: space-around;
 align-items: center;
 flex-direction: column;
-padding: 0 5% 0 5%;
 background-color: #27345B;
 `;
 
