@@ -13,7 +13,6 @@ const Container = styled.section`
   gap: 2em;
   flex-wrap: wrap;
   align-items: center;
-  background-color: #1D2B54;
 `;
 
 const Image = styled.img`
