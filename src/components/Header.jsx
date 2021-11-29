@@ -6,15 +6,19 @@ import twitterImage from '../images/twitterIcon.png'
 
 const Container = styled.section`
   height: 428px;
-  width: 100%;
+  width: auto;
   display: flex;
   justify-content: center;
   background-image: url(${headerBackground});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
-const NavWrapper = styled.nav`
+const NavWrapper = styled.div`
   height: 80px;
   width: 80%;
+  max-width: 80em;
+  margin-inline: auto;
   display: flex;
   margin-top: 3%;
   justify-content: space-between;
@@ -29,16 +33,23 @@ const LogoContainer = styled.div`
 
 const LogoImage = styled.img`
   height: 100%;
-  width: 100%;
+  width: auto;
 `;
 
-const NavItemWrapper = styled.div`
+const NavItemWrapper = styled.nav`
   height: 50px;
-  width: 65%;
-  margin-top: 3%;
+  width: 41em;
+  margin-block: 1.5em;
   display: flex;
   justify-content: space-between;
   // background-color: pink;
+`;
+
+const SocialWrapper = styled.div`
+  // background-color: red;
+  width: 8em;  
+  display: flex;
+  justify-content: space-around;
 `;
 
 const NavItem = styled.div`
@@ -86,12 +97,14 @@ const Header = () => (
         <NavItem>
           <p>FAQ</p>          
         </NavItem>
-        <NavItem>
-          <Icon src={discordImage} />       
-        </NavItem>
-        <NavItem>
-          <Icon src={twitterImage} /> 
-        </NavItem>
+        <SocialWrapper>
+          <NavItem>
+            <Icon src={discordImage} />       
+          </NavItem>
+          <NavItem>
+            <Icon src={twitterImage} /> 
+          </NavItem>
+        </SocialWrapper>
         <Button>
           <p>Connect</p>
         </Button>
