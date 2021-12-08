@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Stack from '../components/Stack'
 import { spaceSmall, spaceLarge } from '../tokens/spacing';
@@ -39,24 +39,32 @@ font-size: 16px;
 
 const Rarity = () => {
   const [rarityState, setRarityState] = useState(0);
+  let rarityRef = useRef();
+  const ScrollAction = (ref) => {
+    if(!ref.current) return
+      ref.current.scrollIntoView({behaviour: 'smooth'});
+  }
   return (
-    <Container>
-      <Title>RARITY</Title>
-      <RarityNav>
+    <>
+      <button onClick={() => ScrollAction(rarityRef)}>Click Me</button>
+      <Container ref={rarityRef}>
+        <Title>RARITY</Title>
+        <RarityNav>
           <RarityNavItem onClick={() => setRarityState(0)}><h3>Backgrounds</h3></RarityNavItem>
           <RarityNavItem onClick={() => setRarityState(1)}><h3>Outfits</h3></RarityNavItem>
           <RarityNavItem onClick={() => setRarityState(2)}><h3>Headwear</h3></RarityNavItem>
-      </RarityNav>
-      {rarityState === 0 && 
-      <RarityBlock titleTest="Backgrounds"/>
-      }
-      {rarityState === 1 && 
-      <RarityBlock titleTest="Outfits"/>
-      }
-      {rarityState === 2 && 
-      <RarityBlock titleTest="Headwear"/>
-      }
-    </Container>
+        </RarityNav>
+        {rarityState === 0 && 
+        <RarityBlock titleTest="Backgrounds"/>
+        }
+        {rarityState === 1 && 
+        <RarityBlock titleTest="Outfits"/>
+        }
+        {rarityState === 2 && 
+        <RarityBlock titleTest="Headwear"/>
+        }
+      </Container>
+    </>
   );
 }
 

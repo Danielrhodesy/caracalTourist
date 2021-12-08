@@ -52,7 +52,7 @@ const SocialWrapper = styled.div`
   justify-content: space-around;
 `;
 
-const NavItem = styled.div`
+const NavItem = styled.button`
   height: 15px;
   width: 10%;
   margin-top: 13px;
@@ -78,39 +78,46 @@ const Icon = styled.img`
   width: 30px;  
 `;
 
-const Header = () => (
-  <Container>
-    <NavWrapper>
-      <LogoContainer>
-        <LogoImage src={caracalLogo} />
-      </LogoContainer>
-      <NavItemWrapper>
-        <NavItem>
-          <p>About</p>
-        </NavItem>
-        <NavItem>
-          <p>Roadmap</p>
-        </NavItem>
-        <NavItem>
-          <p>Rarity</p>          
-        </NavItem>
-        <NavItem>
-          <p>FAQ</p>          
-        </NavItem>
-        <SocialWrapper>
-          <NavItem>
-            <Icon src={discordImage} />       
+const Header = (aboutRef, roadRef, rarityRef) => {
+  const ScrollAction = (ref) => {
+    console.log('ScrollAction')
+    console.log(ref.aboutRef)
+    if(!ref.current) return
+      ref.current.scrollIntoView({behaviour: 'smooth'});
+  }
+  return (
+    <Container>
+      <NavWrapper>
+        <LogoContainer>
+          <LogoImage src={caracalLogo} />
+        </LogoContainer>
+        <NavItemWrapper>
+          <NavItem onClick={() => ScrollAction(aboutRef.aboutRef)}>
+            <p>About</p>
+          </NavItem>
+          <NavItem onClick={() => ScrollAction(roadRef.roadRed)}>
+            <p>Roadmap</p>
+          </NavItem>
+          <NavItem onClick={() => ScrollAction(rarityRef.rarityRef)}>
+            <p>Rarity</p>          
           </NavItem>
           <NavItem>
-            <Icon src={twitterImage} /> 
+            <p>FAQ</p>          
           </NavItem>
-        </SocialWrapper>
-        <Button>
-          <p>Connect</p>
-        </Button>
-      </NavItemWrapper>
-    </NavWrapper>
-  </Container>
-);
-
+          <SocialWrapper>
+            <NavItem>
+              <Icon src={discordImage} />       
+            </NavItem>
+            <NavItem>
+              <Icon src={twitterImage} /> 
+            </NavItem>
+          </SocialWrapper>
+          <Button>
+            <p>Connect</p>
+          </Button>
+        </NavItemWrapper>
+      </NavWrapper>
+    </Container>
+  );
+}
 export default Header;
